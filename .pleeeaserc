@@ -1,0 +1,14 @@
+{
+	"in": "./public/stylesheets/main.css",
+	"out": "./public/stylesheets/main.min.css",
+	"import": true,
+	"autoprefixer": {"browsers": ["last 3 versions", "Android 2.3", "ios 6"]},
+	"mqpacker": true,
+	"minifier": {"preserveHacks": true, "removeAllComments": true},
+	"rem": ["14px", {"replace": false}],
+	"pseudoElements": true,
+	"opacity": false,
+	"filters": false,
+	"sourcemaps": false,
+	"next": false
+}

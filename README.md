@@ -1,2 +1,2 @@
 # cubing-camp
-Site para realização de campeonatos online no Brasil.
+Site para realização de campeonatos de cubo mágico online no Brasil.

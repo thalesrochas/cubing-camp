@@ -1,0 +1,4 @@
+node_modules
+.vscode
+public/scripts/libs
+public/scripts/controllers/libs
