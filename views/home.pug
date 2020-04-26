@@ -1,15 +1,40 @@
+mixin listCamps(title, competitions)
+  .col-4.inside-body
+    .jumbotron.py-2
+      h3.text-center
+        strong
+          | #{title}
+      hr.my-4
+      .competitions
+        for comp in competitions
+          a(href=`http://localhost:3000/${comp.id}`).clickable.m-0.p-2.w-100
+            | #{comp.name} | #{comp.date}
+          hr
+
 doctype
-html(lang="pt-br")
+html(lang="pt-br").h-100
   head
-    include ../components/header
-    link(rel="stylesheet" href="stylesheets/main.min.css")
+    include ./components/header
+    link(rel="stylesheet" href="/stylesheets/main.min.css")
     title Home
 
-  body
+  body.h-100
 
-    include ../components/flashMsgs
+    include ./components/navbar
+    //- include ./components/flashMsgs
 
     .container.inside-body
-      | Hey!!
+      h6.title
+        | Participe de campeonatos de cubo mágico online, basta selecionar um da lista "Agora" abaixo.
 
-    include ../components/footer
+      .row
+        - const campsUpcomming = [{id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}];
+        +listCamps("Próximos", campsUpcomming)
+
+        - const campsNow = [{id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}];
+        +listCamps("Agora", campsNow)
+
+        - const campsPast = [{id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}];
+        +listCamps("Passados", campsPast)
+
+    include ./components/footer

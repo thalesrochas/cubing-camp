@@ -19,13 +19,17 @@
   ],
   "disallowStringConcatenation": "aggressive",
   "disallowTagInterpolation": true,
-  "disallowTrailingSpaces": true,
   "requireLineFeedAtFileEnd": true,
   "requireLowerCaseAttributes": true,
   "requireLowerCaseTags": true,
   "requireSpaceAfterCodeOperator": true,
   "requireSpecificAttributes": [
-    { "img": [ "src" ] }
+    { "img": [ "src" ] },
+    { "link": [ "rel", "href" ] },
+    { "script": [ "src" ] },
+    { "input": [ "type" ] },
+    { "form": [ "method", "action" ] },
+    { "a": [ "href" ] }
   ],
   "requireStrictEqualityOperators": true,
   "validateAttributeQuoteMarks": true,
