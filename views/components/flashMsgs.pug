@@ -1,0 +1,21 @@
+#flashes.container-fluid.p-0
+  if failure.length
+    div(role="alert").alert.alert-danger.alert-dismissible.fade.show.m-0
+      | #{failure}
+      button(type="button" data-dismiss="alert" aria-label="Close").close
+        span(aria-hidden="true")
+          | &times;
+
+  if warning.length
+    div(role="alert").alert.alert-warning.alert-dismissible.fade.show.m-0
+      | #{warning}
+      button(type="button" data-dismiss="alert" aria-label="Close").close
+        span(aria-hidden="true")
+          | &times;
+
+  if success.length
+    div(role="alert").alert.alert-success.alert-dismissible.fade.show.m-0
+      | #{success}
+      button(type="button" data-dismiss="alert" aria-label="Close").close
+        span(aria-hidden="true")
+          | &times;

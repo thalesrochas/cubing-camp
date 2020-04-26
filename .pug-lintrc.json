@@ -30,7 +30,6 @@
   "requireStrictEqualityOperators": true,
   "validateAttributeQuoteMarks": true,
   "validateAttributeSeparator": { "separator": " ", "multiLineSeparator": "\n " },
-  "validateDivTags": true,
   "validateIndentation": 2,
   "validateLineBreaks": "CRLF",
   "validateSelfClosingTags": true,
