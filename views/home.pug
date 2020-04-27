@@ -1,14 +1,19 @@
 mixin listCamps(title, competitions)
-  .col-4.inside-body
-    .jumbotron.py-2
+  .col-4.inside-body.h-100
+    .jumbotron.py-2.m-0
       h3.text-center
         strong
           | #{title}
       hr.my-4
-      .competitions
+      .competitions.p-1
         for comp in competitions
-          a(href=`http://localhost:3000/${comp.id}`).clickable.m-0.p-2.w-100
-            | #{comp.name} | #{comp.date}
+          div.clickable.p-2.w-100
+            a(href=`http://localhost:3000/${comp.id}`).clickable
+              span
+                | #{comp.name}
+              br
+              span
+                | #{comp.date}
           hr
 
 doctype
@@ -23,18 +28,18 @@ html(lang="pt-br").h-100
     include ./components/navbar
     //- include ./components/flashMsgs
 
-    .container.inside-body
+    #main-container.container.inside-body
       h6.title
         | Participe de campeonatos de cubo mágico online, basta selecionar um da lista "Agora" abaixo.
 
       .row
-        - const campsUpcomming = [{id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}];
+        - const campsUpcomming = [{id: "aisjdpiajspdijaspdijaspidja684848855", name: "autsquebrausker", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Brasileiro Open 2020", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Pyraminx ao Cubo", date: "25-03-2020"}];
         +listCamps("Próximos", campsUpcomming)
 
-        - const campsNow = [{id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}];
+        - const campsNow = [{id: "aisjdpiajspdijaspdijaspidja684848855", name: "Capivara 767 Ceará 2020", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Fortaleza Cúbica 2020", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Mossoró Open 2020", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "autsquebrausker", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Brasileiro Open 2020", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Pyraminx ao Cubo", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "autsquebrausker", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Brasileiro Open 2020", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Pyraminx ao Cubo", date: "25-03-2020"}];
         +listCamps("Agora", campsNow)
 
-        - const campsPast = [{id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Velocidade³", date: "25-03-2020"}];
+        - const campsPast = [{id: "aisjdpiajspdijaspdijaspidja684848855", name: "Testando um nome grande de campeonato 2020", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Quando chover você vai saber!", date: "25-03-2020"}, {id: "aisjdpiajspdijaspdijaspidja684848855", name: "Iguatemi Open 2021", date: "25-03-2021"}];
         +listCamps("Passados", campsPast)
 
     include ./components/footer

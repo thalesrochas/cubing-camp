@@ -3,11 +3,12 @@ body{
   background-image: linear-gradient(#008cff, #003cff);
 }
 
-a.clickable {
+.clickable {
   color: #000;
+  border-radius: 5px;
 }
 
-a.clickable:hover {
+.clickable:hover {
   text-decoration: none;
   color: #000;
   background-color: #ddd;
@@ -24,4 +25,21 @@ a.clickable:hover {
 .inside-body {
   margin-top: 25px;
   box-sizing: border-box;
+}
+
+.unscrollable {
+  overflow: hidden;
+}
+
+#main-container {
+  height: 95%;
+}
+
+#main-container .row, #main-container .row .jumbotron {
+  height: 85%;
+}
+
+#main-container .row .jumbotron .competitions {
+  height: 75%;
+  overflow-y: scroll;
 }
