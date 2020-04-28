@@ -1,21 +1,24 @@
 body{
   padding-top: 62px;
-  background-image: linear-gradient(#008cff, #003cff);
+  background-image: linear-gradient(#003cff, #008cff);
 }
 
-.clickable {
+.clickable, .aclickable {
   color: #000;
   border-radius: 5px;
 }
-
+.aclickable:hover {
+  text-decoration: none;
+  color: #000;
+}
 .clickable:hover {
   text-decoration: none;
   color: #000;
-  background-color: #ddd;
+  background-color: rgba(197, 197, 197, 0.773);
 }
 
 .title {
-  background-color: #e9ecef;
+  background-color: rgba(234, 237, 240, 0.855);
   border-radius: 5px;
   width: 100%;
   padding: 10px 25px;
@@ -31,6 +34,18 @@ body{
   overflow: hidden;
 }
 
+.bg-gray-transp {
+  background-color: rgba(233, 236, 239, 0.855);
+}
+
+.hero-tab.active {
+  font-weight: bold!important;
+  color: #fff!important;
+  background-color: none!important;
+  background-image: linear-gradient(#003fff, #004bff);
+  border-color: #dee2e6 #dee2e6 #004bff!important;
+}
+
 #main-container {
   height: 95%;
 }
@@ -42,4 +57,50 @@ body{
 #main-container .row .jumbotron .competitions {
   height: 75%;
   overflow-y: scroll;
+}
+
+#main-container .row .jumbotron .competitions::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  border-left: 0;
+  background: #0000001a;
+}
+
+#main-container .row .jumbotron .competitions::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #8b8b8ba6;
+}
+
+#main-container .row .jumbotron .competitions::-webkit-scrollbar-thumb {
+  background: #003cff8f;
+  border-radius: 10px;
+}
+
+#bg-cube3 {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  html {
+    height: 100%!important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  body {
+    padding-bottom: 20px;
+  }
+
+  #main-container .row .jumbotron {
+    max-height: 500px;
+  }
+  
+  #main-container .row .jumbotron .competitions {
+    max-height: 400px;
+  }
 }

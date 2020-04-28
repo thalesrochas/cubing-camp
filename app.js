@@ -9,6 +9,10 @@ app.set("view engine", "pug");
 app.get("/", (req, res) => {
   res.render("home");
 });
+app.get("/comp/:id", (req, res) => {
+  let camp = true;
+  res.render("competition", { camp });
+});
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
