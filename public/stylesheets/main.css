@@ -46,6 +46,10 @@ body{
   border-color: #dee2e6 #dee2e6 #004bff!important;
 }
 
+.puzzle-icon {
+  width: 30px;
+}
+
 #main-container {
   height: 95%;
 }
@@ -83,6 +87,11 @@ body{
   left: 0;
   height: 100%;
   width: 100%;
+}
+
+#rounds {
+  margin-top: 0;
+  height: 98%;
 }
 
 @media (min-width: 992px) {

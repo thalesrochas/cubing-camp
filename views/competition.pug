@@ -19,9 +19,9 @@ html(lang="pt-br").h-100
         {wcaid: "2017CUNH02", name: "Abner Valverde Cunha"}
       ];
 
-    .container.inside-body
-      .row
-        #competidores.col-12.inside-body.h-100
+    .container.inside-body.mt-0.h-100
+      .row.h-100
+        #competidores.col-12.inside-bodyh-100
           .jumbotron.bg-gray-transp.py-2.m-0
             h3.text-center
               strong
@@ -42,13 +42,19 @@ html(lang="pt-br").h-100
                     span.col-3
                       | #{competitor.name}
 
-        #rounds.col-12.inside-body.h-100
-          .jumbotron.bg-gray-transp.py-2.m-0
-            h3.text-center
-              strong
-                | Rounds
-            hr.my-4
-            div
+        #rounds.col-12.inside-body
+          .row.justify-content-between.h-100
+
+            .col-3.jumbotron.bg-gray-transp.py-2.m-0.h-100
+              img(src="/assets/svg/icons/puzzles/222.svg").puzzle-icon
+
+
+            .col-8.jumbotron.bg-gray-transp.py-2.m-0
+              h3.text-center
+                strong
+                  | Rounds
+              hr.my-4
+              div
         #podios.col-12.inside-body.h-100
           .jumbotron.bg-gray-transp.py-2.m-0
             h3.text-center
