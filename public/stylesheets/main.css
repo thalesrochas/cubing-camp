@@ -7,15 +7,24 @@ body{
   color: #000;
   border-radius: 5px;
 }
+
 .aclickable:hover {
+  cursor: pointer;
   text-decoration: none;
   color: #000;
 }
+
 .clickable:hover {
   text-decoration: none;
   color: #000;
   background-color: rgba(197, 197, 197, 0.773);
 }
+
+#rounds .clickable, #rounds .aclickable {
+  color: #000;
+  border-radius: 0;
+}
+
 
 .title {
   background-color: rgba(234, 237, 240, 0.855);
@@ -47,7 +56,16 @@ body{
 }
 
 .puzzle-icon {
-  width: 30px;
+  width: 40px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.btn-icon {
+  padding: 1px 0 1.5px 0;
+  width: 25px;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
 #main-container {
@@ -60,7 +78,7 @@ body{
 
 #main-container .row .jumbotron .competitions {
   height: 75%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #main-container .row .jumbotron .competitions::-webkit-scrollbar {

@@ -1,3 +1,5 @@
+// Nav
+
 let competidores = document.querySelector("#competidores");
 let rounds = document.querySelector("#rounds");
 let podios = document.querySelector("#podios");
@@ -44,3 +46,39 @@ function checkview() {
 window.addEventListener("hashchange", checkview, false);
 
 window.onload = checkview();
+
+// Categorias e Rounds
+
+let categories = ["222", "333", "444"];
+
+categories.forEach(cubeCode => {
+  if (document.querySelector(`#drop-${cubeCode}`)) {
+    let drop = document.querySelector(`#drop-${cubeCode}`);
+    let dropItems = document.querySelector(`#drop-items-${cubeCode}`);
+
+    drop.addEventListener("click", () => {
+      if (dropItems.classList.contains("d-none")) {
+        dropItems.classList.remove("d-none");
+      } else {
+        dropItems.classList.add("d-none");
+      }
+    });
+  }
+
+  // Rounds
+  let cubeRounds = [1, 2, 3];
+  cubeRounds.forEach(roundNum => {
+    if (document.querySelector(`#rd${roundNum}-${cubeCode}`)) {
+      let rd = document.querySelector(`#rd${roundNum}-${cubeCode}`);
+      let rdShow = document.querySelector(`#rd${roundNum}-${cubeCode}-show`);
+
+      rd.addEventListener("click", () => {
+        if (rdShow.classList.contains("d-none")) {
+          rdShow.classList.remove("d-none");
+        } else {
+          rdShow.classList.add("d-none");
+        }
+      });
+    }
+  });
+});
