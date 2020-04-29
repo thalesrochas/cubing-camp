@@ -2,13 +2,10 @@ const express = require("express");
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.render("home");
-});
+const home = require("./home");
+const competition = require("./competition");
 
-router.get("/comp/:id", (req, res) => {
-  let camp = true;
-  res.render("competition", { camp });
-});
+router.get("/", home.get());
+router.get("/competition/:id", competition.get());
 
 module.exports = router;
