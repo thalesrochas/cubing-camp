@@ -10,6 +10,9 @@ nav.navbar.navbar-light.bg-light.fixed-top.navbar-expand-lg.p-0.pt-2
     #main-nav.collapse.navbar-collapse
       ul.navbar-nav.mr-auto.nav.nav-tabs.w-100
         li.nav-item
+          a(href="/").nav-link.hero-tab
+            | Home
+        li.nav-item
           a(href="#competidores").nav-link.hero-tab
             | Competidores
         li.nav-item
@@ -19,6 +22,6 @@ nav.navbar.navbar-light.bg-light.fixed-top.navbar-expand-lg.p-0.pt-2
           a(href="#podios").nav-link.hero-tab
             | Pódio
 
-        a(href="/").btn.btn-success.btn-sm.my-1.ml-auto
+        a(href=`/competition/${idCampeonato}/competitor/new`).btn.btn-success.btn-sm.my-1.ml-auto
           img(src="/assets/svg/icons/plus-square-regular.svg").btn-icon.pr-2
           | Participar deste Campeonato

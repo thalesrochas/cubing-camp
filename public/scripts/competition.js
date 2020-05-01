@@ -50,34 +50,55 @@ window.onload = checkview();
 // Categorias e Rounds
 
 let categories = ["222", "333", "444"];
+let cubeRounds = [1, 2, 3];
+
+function hideAllCategories() {
+  categories.forEach(cubeCode => {
+    let dropItems = document.querySelector(`#drop-items-${cubeCode}`);
+    if (dropItems) {
+      if (!dropItems.classList.contains("d-none")) {
+        dropItems.classList.add("d-none");
+      }
+    }
+  });
+}
+
+function hideAllRounds() {
+  categories.forEach(cubeCode => {
+    cubeRounds.forEach(roundNum => {
+      let rdShow = document.querySelector(`#rd${roundNum}-${cubeCode}-show`);
+      if (rdShow) {
+        if (!rdShow.classList.contains("d-none")) {
+          rdShow.classList.add("d-none");
+        }
+      }
+    });
+  });
+}
 
 categories.forEach(cubeCode => {
-  if (document.querySelector(`#drop-${cubeCode}`)) {
-    let drop = document.querySelector(`#drop-${cubeCode}`);
+  let drop = document.querySelector(`#drop-${cubeCode}`);
+  if (drop) {
     let dropItems = document.querySelector(`#drop-items-${cubeCode}`);
-
     drop.addEventListener("click", () => {
-      if (dropItems.classList.contains("d-none")) {
-        dropItems.classList.remove("d-none");
+      if (!dropItems.classList.contains("d-none")) {
+        hideAllCategories();
       } else {
-        dropItems.classList.add("d-none");
+        hideAllCategories();
+        dropItems.classList.remove("d-none");
       }
     });
   }
 
   // Rounds
-  let cubeRounds = [1, 2, 3];
   cubeRounds.forEach(roundNum => {
-    if (document.querySelector(`#rd${roundNum}-${cubeCode}`)) {
-      let rd = document.querySelector(`#rd${roundNum}-${cubeCode}`);
+    let rd = document.querySelector(`#rd${roundNum}-${cubeCode}`);
+    if (rd) {
       let rdShow = document.querySelector(`#rd${roundNum}-${cubeCode}-show`);
 
       rd.addEventListener("click", () => {
-        if (rdShow.classList.contains("d-none")) {
-          rdShow.classList.remove("d-none");
-        } else {
-          rdShow.classList.add("d-none");
-        }
+        hideAllRounds();
+        rdShow.classList.remove("d-none");
       });
     }
   });

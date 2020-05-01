@@ -26,7 +26,6 @@
                 p.m-0.py-2.h-100
                   | Segundo Round
 
-
 doctype
 html(lang="pt-br").h-100
   head
@@ -101,6 +100,28 @@ html(lang="pt-br").h-100
                           p.m-0.py-2.h-100
                             | Segundo Round
 
+                .column
+                  #drop-444.aclickable.my-0
+                    .row.clickable.mx-1
+                      .col-3.p-0
+                        img(src="/assets/svg/icons/puzzles/444.svg").puzzle-icon.p-1
+                      .col-9.p-0
+                        p.m-0.py-2
+                          | 4x4x4
+                  #drop-items-444.column.d-none
+                    #rd1-444.aclickable.my-0
+                      .row.clickable.mx-1
+                        .col-3.p-0
+                        .col-9.p-0
+                          p.m-0.py-2.h-100
+                            | Primeiro Round
+                    #rd2-444.aclickable.my-0
+                      .row.clickable.mx-1
+                        .col-3.p-0
+                        .col-9.p-0
+                          p.m-0.py-2.h-100
+                            | Segundo Round
+
             .col-9.h-100
               .jumbotron.bg-gray-transp.py-2.px-2.m-0.ml-2.h-100
                 h3.text-center
@@ -122,16 +143,16 @@ html(lang="pt-br").h-100
                           | WCA ID
                         strong.col-4.px-0
                           | Nome Completo
-                        strong.col-1.px-0
-                          | Tempo 1
-                        strong.col-1.px-0
-                          | Tempo 2
-                        strong.col-1.px-0
-                          | Tempo 3
-                        strong.col-1.px-0
-                          | Tempo 4
-                        strong.col-1.px-0
-                          | Tempo 5
+                        strong.col-1.px-0.text-center
+                          | 1
+                        strong.col-1.px-0.text-center
+                          | 2
+                        strong.col-1.px-0.text-center
+                          | 3
+                        strong.col-1.px-0.text-center
+                          | 4
+                        strong.col-1.px-0.text-center
+                          | 5
 
                       for competitor in competitors
                         a(href="#").aclickable
@@ -140,18 +161,60 @@ html(lang="pt-br").h-100
                               | #{competitor.wcaid}
                             span.col-4.px-0
                               | #{competitor.name}
-                            span.col-1.px-0
+                            span.col-1.px-0.text-center
                               | 15.25
-                            span.col-1.px-0
+                            span.col-1.px-0.text-center
                               | 15.25
-                            span.col-1.px-0
+                            span.col-1.px-0.text-center
                               | 15.25
-                            span.col-1.px-0
+                            span.col-1.px-0.text-center
                               | 15.25
-                            span.col-1.px-0
+                            span.col-1.px-0.text-center
                               | 15.25
 
-                        
+                  #rd2-333-show.d-none
+                    .row
+                      .col-1
+                        img(src="/assets/svg/icons/puzzles/333.svg").puzzle-icon.p-1
+                      .col-11
+                        h4.m-0.pt-1
+                          strong
+                            | 3x3x3 - Round 2
+                    .column
+                      .row.title.justify-content-between.p-1.m-0.mb-1.w-100
+                        strong.col-2.px-0.text-center
+                          | WCA ID
+                        strong.col-4.px-0
+                          | Nome Completo
+                        strong.col-1.px-0.text-center
+                          | 1
+                        strong.col-1.px-0.text-center
+                          | 2
+                        strong.col-1.px-0.text-center
+                          | 3
+                        strong.col-1.px-0.text-center
+                          | 4
+                        strong.col-1.px-0.text-center
+                          | 5
+
+                      for competitor in competitors
+                        a(href="#").aclickable
+                          .row.justify-content-between.clickable.p-1.m-0.mb-1.w-100
+                            span.col-2.px-0.text-center
+                              | #{competitor.wcaid}
+                            span.col-4.px-0
+                              | #{competitor.name}
+                            span.col-1.px-0.text-center
+                              | 15.25
+                            span.col-1.px-0.text-center
+                              | 15.25
+                            span.col-1.px-0.text-center
+                              | 15.25
+                            span.col-1.px-0.text-center
+                              | 15.25
+                            span.col-1.px-0.text-center
+                              | 15.25
+
         #podios.col-12.inside-body.h-100
           .jumbotron.bg-gray-transp.py-2.m-0
             h3.text-center
@@ -159,6 +222,8 @@ html(lang="pt-br").h-100
                 | Pódios
             hr.my-4
             div
+
+    include ./components/credits
 
     script(src="/scripts/competition.js")
     script(data-who="💎 Made with naker.io 💎" src="https://d23jutsnau9x47.cloudfront.net/back/v1.0.9/viewer.js" data-option="{|environment|:{|gradient|:|horizontal|,|sensitivity|:0.8,|colorStart|:[0,0,0,0],|colorEnd|:[0,0,0,0]},|particle|:{|life|:5,|power|:0.01,|texture|:|https://res.cloudinary.com/naker-io/image/upload/v1566560053/window_04.png|,|number|:20,|colorStart|:[116,129,92,0.13],|colorEnd|:[198,188,107,0.52],|sizeStart|:1.57,|sizeEnd|:3.14,|direction1|:{|x|:100,|y|:100,|z|:100},|direction2|:{|x|:-100,|y|:-100,|z|:-100}},|waterMark|:false}" data-container="bg-cube3")
